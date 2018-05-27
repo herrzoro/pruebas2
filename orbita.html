@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>three.js webgl - rotate object around point</title>
+    <meta charset="utf-8">
+    <style>
+    body {
+        background-color: #ffffff;
+        margin: 0;
+        overflow: hidden;
+    }
+    </style>
+    <script src="three.min.js"></script>
+    <script>
+    var camera, scene, renderer;
+    var geometry, material, tierra, ref, pivotPoint;
+    var clock;
+
+
+    function crearTierra(){
+            var tierraGeometria = new THREE.SphereGeometry(5,100,100);
+            var tierraMaterial = crearMaterialTierra();
+            tierra = new THREE.Mesh(tierraGeometria, tierraMaterial);
+            tierra.name = 'tierra';
+            tierra.castShadow = true;
+            tierra.position.y = 5;
+            pivotPoint.add(tierra);
+            escena.add(tierra);
+        }         
+         
+        function crearMaterialTierra(){
+            var tierraTextura = new THREE.Texture();  
+            var loader = new THREE.ImageLoader(); 
+            loader.load('texturas/tierra.jpg', function (image){
+            tierraTextura.image = image; 
+            tierraTextura.needsUpdate = true; 
+            }); 
+
+            var normalTextura = new THREE.Texture(); //<-----
+            var loader = new THREE.ImageLoader(); 
+            loader.load('texturas/tierrarelieve.jpg', function(image){
+            normalTextura.image = image;  //<-----
+            normalTextura.needsUpdate = true; 
+            });  
+
+            var especularTextura = new THREE.Texture();
+            var loader = new THREE.ImageLoader();
+            loader.load('texturas/tierraespecular.jpg', function(image){
+            especularTextura.image = image; //<-----
+            especularTextura.needsUpdate = true; //<-----
+            });
+
+            tierraMaterial = new THREE.MeshPhongMaterial();
+            tierraMaterial.map = tierraTextura;  
+
+            tierraMaterial.normalMap = normalTextura ;
+            tierraMaterial.normalScale = new THREE.Vector2( 0.7, 0.7 );
+            tierraMaterial.especularMap = especularTextura;
+            tierraMaterial.specular = new THREE.Color(0x262626);
+               return tierraMaterial;
+        }
+
+
+
+        function init() {
+            renderer = new THREE.WebGLRenderer();
+            renderer.setClearColor(0xffffff,1);
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            document.body.appendChild( renderer.domElement );
+
+            scene = new THREE.Scene();
+
+            geometry = new THREE.SphereGeometry( 0.5, 20, 20 );
+            material = new THREE.MeshPhongMaterial({ color: 0xff9800});
+            ref = new THREE.Mesh( geometry, material );
+            ref.position.set(0,0,0);
+            scene.add( ref );
+
+            pivotPoint = new THREE.Object3D();
+            pivotPoint.position.set(0,0,0);
+            scene.add( pivotPoint );
+            crearTierra();           
+            tierra.position.set(0,2,0)
+            
+            camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 100 );
+            camera.position.set (0,0,-4);
+            camera.lookAt(pivotPoint.position);
+            
+            var ambient = new THREE.AmbientLight(0xffffff,0.3);
+            scene.add(ambient);
+            var light = new THREE.DirectionalLight(0xffffff, 1, 100, 2 );
+            light.position.set(10, 20 , 15); 
+            light.castShadow = true;
+            scene.add(light);
+
+            clock = new THREE.Clock();
+            window.addEventListener( 'resize', onWindowResize, false );
+
+        }
+
+        var dir=1;
+        function animate() {
+            requestAnimationFrame( animate );
+            
+            var delta =  clock.getDelta();
+
+            pivotPoint.rotation.z += delta * 2;
+            
+            renderer.render( scene, camera );
+        }
+        
+        function onWindowResize() {
+
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+
+                renderer.setSize( window.innerWidth, window.innerHeight );
+
+        }
+        
+        window.addEventListener("DOMContentLoaded", function(event) {
+            init();
+            animate();
+        });
+        
+    </script>
+</head>
+<body>  
+</body>
+</html>
