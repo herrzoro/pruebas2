@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="shaders/skyGradient.js"></script>
+    <script src="js/components/camera-position.js"></script>
+    <script src="js/components/ground.js"></script>
+    <script src="js/components/link-controls.js"></script>
+    <script src="js/components/aframe-tooltip-component.js"></script>
+
+  </head>
+  <body>
+  <a-scene>
+    <a-sky  src="texturas/4piso.jpg" ></a-sky>
+  
+
+  <a-assets>
+    <img id="homeThumbnail" src="texturas/laboratorio.jpg">
+    <img id="home" src="texturas/laboratorio2.jpg">
+    
+  </a-assets>
+
+   <a-link href="labora.html" title="." titleColor="#ff0000" image="#home"  position = "5.62 0.08 -0.5" rotation="0 90 0"  >
+     
+     <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD FRNCISCO JOSE DE CALDAS(UD); width:5" position="0 1.5 0"></a-entity>
+   </a-link>
+
+    <a-link href="UMB.html" title="." titleColor="#ff0000" image="#homeThumbnail"  position = "-3.53 -0.2 -4.357"  rotation="0 45 0" >
+     
+     <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD MANUELA BELTRAN(UMB); width:5" position="0 1.5 0"></a-entity>
+   </a-link>
+
+  <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          ></a-cursor>
+</a-entity>
+
+ 
+  </a-scene>
+
+  </body>
+</html>
