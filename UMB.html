@@ -17,22 +17,25 @@
   
 
   <a-assets>
-    <img id="homeThumbnail" src="texturas/cafeteria.jpg">
-    <img id="home" src="texturas/salon7.jpg">
+    <img id="home" src="texturas/inicio.jpg">
+    <img id="home2" src="texturas/salon7.jpg">
+    <img id="home3" src="texturas/6piso.jpg">
     
   </a-assets>
 
-<!-- A cafeteria -->
-    <a-link href="cafeteria.html" title="." titleColor="#ff0000" image="#homeThumbnail"  position = "-4.84 0.09 0.257"  rotation="0 90 0" >
+<!-- A INICIO -->
+    <a-link href="home.html" title="." titleColor="#ff0000" image="#home"  position = "0 3.5 -4" rotation="50 0 0"  >
+     
+    </a-link>
+
+
+<!-- A Pasillo 6 piso -->
+    <a-link href="6piso.html" title="." titleColor="#ff0000" image="#home3"  position = "-4.84 0.09 0.257"  rotation="0 90 0" >
       <a-entity text="color:#42f4ce; align:center; font:kelsonsans; value:Bienvenidos a la UMB!; width:5" position="0 1.5 0" rotation="0 0 -3"></a-entity>
-   </a-link>
+    </a-link>
+
 
 <!-- A salon 7 piso -->
-   <a-link href="salon7.html" title="." titleColor="#ff0000" image="#home"  position = "4.62 0.08 -0.5" rotation="0 90 0"  >
-     
-   
-   </a-link>
-
 
 
   <a-entity camera look-controls>
@@ -42,7 +45,7 @@
           event-set__1="_event: mouseenter; color: springgreen"
           event-set__2="_event: mouseleave; color: black"
           ></a-cursor>
-</a-entity>
+  </a-entity>
 
  
   </a-scene>
