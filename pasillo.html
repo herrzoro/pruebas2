@@ -13,26 +13,27 @@
   </head>
   <body>
   <a-scene>
-    <a-sky  src="texturas/UMB.jpg" ></a-sky>
+    <a-sky  src="texturas/6piso.jpg" ></a-sky>
   
 
   <a-assets>
-    <img id="homeThumbnail" src="texturas/cafeteria.jpg">
-    <img id="home" src="texturas/salon.jpg">
+    <img id="homeThumbnail" src="texturas/6piso.jpg">
+    <img id="home" src="texturas/4piso.jpg">
+    <img id="salon" src ="texturas/salon.jpg">
     <img id="spacio" src="texturas/salon.jpg">
   </a-assets>
- 
  <a-link href="prueba.html" title="." titleColor="#ff0000" image="#home"  position = "0 5.5 0" rotation="90 0 0"  >
     <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:Visita otra Universidad; width:5" position="0 1.5 0"></a-entity>
   </a-link>
 
-   <a-link href="salon.html" title="." titleColor="#ff0000" image="#home"  position = "4.62 0.08 -0.5" rotation="0 90 0"  >
-      <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD FRNCISCO JOSE DE CALDAS(UD); width:5" position="0 1.5 0"></a-entity>
-  </a-link>
-
-
-    <a-link href="cafeteria.html" title="." titleColor="#ff0000" image="#homeThumbnail"  position = "-4.84 0.09 0.257"  rotation="0 90 0" >
-     <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD MANUELA BELTRAN(UMB); width:5" position="0 1.5 0"></a-entity>
+  <a-link href="salon.html" title="." titleColor="#ff0000" image="#salon"  position = "5 0.08 4.8" rotation="0 0 0"  >
+        <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:escaleras; width:5" position="0 1.5 0"></a-entity>
+   </a-link>
+   <a-link href="4piso.html" title="." titleColor="#ff0000" image="#home"  position = "0.4 0.08 -7" rotation="0 0 0"  >
+        <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:escaleras; width:5" position="0 1.5 0"></a-entity>
+   </a-link>
+    <a-link href="UMB.html" title="." titleColor="#ff0000" image="#homeThumbnail"  position = "-4.7 0 0"  rotation="0 45 0" >
+         <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD MANUELA BELTRAN(UMB); width:5" position="0 1.5 0"></a-entity>
    </a-link>
 
   <a-entity camera look-controls>

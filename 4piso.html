@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UMB</title>
+    <title>Hello, WebVR! - A-Frame</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
     <script src="shaders/skyGradient.js"></script>
@@ -13,25 +13,22 @@
   </head>
   <body>
   <a-scene>
-    <a-sky  src="texturas/UMB.jpg" ></a-sky>
+    <a-sky  src="texturas/4piso.jpg" ></a-sky>
   
 
   <a-assets>
-    <img id="homeThumbnail" src="texturas/cafeteria.jpg">
-    <img id="home" src="texturas/salon.jpg">
-    <img id="spacio" src="texturas/salon.jpg">
+    <img id="homeThumbnail" src="texturas/laboratorio.jpg">
+    <img id="home" src="texturas/laboratorio2.jpg">
+    
   </a-assets>
- 
- <a-link href="prueba.html" title="." titleColor="#ff0000" image="#home"  position = "0 5.5 0" rotation="90 0 0"  >
-    <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:Visita otra Universidad; width:5" position="0 1.5 0"></a-entity>
-  </a-link>
 
-   <a-link href="salon.html" title="." titleColor="#ff0000" image="#home"  position = "4.62 0.08 -0.5" rotation="0 90 0"  >
-      <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD FRNCISCO JOSE DE CALDAS(UD); width:5" position="0 1.5 0"></a-entity>
-  </a-link>
+   <a-link href="labora.html" title="." titleColor="#ff0000" image="#home"  position = "5.62 0.08 -0.5" rotation="0 90 0"  >
+     
+     <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD FRNCISCO JOSE DE CALDAS(UD); width:5" position="0 1.5 0"></a-entity>
+   </a-link>
 
-
-    <a-link href="cafeteria.html" title="." titleColor="#ff0000" image="#homeThumbnail"  position = "-4.84 0.09 0.257"  rotation="0 90 0" >
+    <a-link href="UMB.html" title="." titleColor="#ff0000" image="#homeThumbnail"  position = "-3.53 -0.2 -4.357"  rotation="0 45 0" >
+     
      <a-entity text="color:#ff0000; align:center; font:kelsonsans; value:UNIVERSIDAD MANUELA BELTRAN(UMB); width:5" position="0 1.5 0"></a-entity>
    </a-link>
 
